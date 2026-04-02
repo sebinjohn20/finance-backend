@@ -23,7 +23,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/records", recordRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 
-app.use("*", (req, res) => {
+app.use((req, res) => {
   res.status(404).json({ message: "Route not found" });
 });
 
