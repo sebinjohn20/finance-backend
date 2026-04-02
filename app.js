@@ -14,10 +14,18 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
 
+app.get("/", (req, res) => {
+  res.send("🚀 Finance Backend API is Running...");
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/records", recordRoutes);
 app.use("/api/dashboard", dashboardRoutes);
+
+app.use("*", (req, res) => {
+  res.status(404).json({ message: "Route not found" });
+});
 
 app.use(errorHandler);
 
