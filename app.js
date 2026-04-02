@@ -15,7 +15,7 @@ app.use(cors());
 app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
-  res.send("🚀 Finance Backend API is Running...");
+  res.send(" Finance Backend API is Running...");
 });
 
 app.use("/api/auth", authRoutes);
